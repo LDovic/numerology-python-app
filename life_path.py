@@ -1,4 +1,9 @@
 from reduce import get_input
 from reduce import numerologize
 
-print(numerologize(get_input("birthday") + get_input("month") + get_input("year"), True))
+def life_path():
+    birthday = get_input("birthday")
+    month = get_input("month")
+    year = get_input("year")
+
+    return numerologize(birthday + month + year, True)

@@ -4,8 +4,11 @@ def get_input(var):
     return x
 
 def numerologize(num, masters):
-    if masters is not False:
-        masters = [11,22,33]
+    literals = [1,2,3,4,5,6,7,8,9,0]
+    if masters:
+        literals.append(11)
+        literals.append(22)
+        literals.append(33)
 
     lis = list(str(num))
     y = 0
@@ -13,7 +16,7 @@ def numerologize(num, masters):
     for l in lis:
         y += int(l)
 
-    if y < 10 or masters.__contains__(y):
+    if y in literals:
         return y
     else:
         return numerologize(str(y), masters)

@@ -2,10 +2,15 @@ from reduce import get_input
 from reduce import numerologize
 from datetime import datetime
 
-cyear = datetime.now().year
+def personal_year():
+   current_year = datetime.now().year
 
-day_and_month = numerologize(get_input("birthday") + get_input("month"), False)
-year = int(get_input("year"))
+   day_and_month = numerologize(get_input("birthday") + get_input("month"), False)
+   birth_year = int(get_input("year"))
 
-for x in range(year, cyear + 1):
-	print(str(x) + ": " + str(numerologize(day_and_month + x))
+   personal_year_list = []
+
+   for year in range(birth_year, current_year + 1):
+      personal_year_list.append(str(year) + ": " + str(numerologize(day_and_month + year, True)))
+
+   return personal_year_list
